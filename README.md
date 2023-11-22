@@ -2,7 +2,7 @@
 
 Ubicacion de respuesta -> src/main/java/ar/edu/undef/fie/juegoDeRol
 
-##Modelo 3: 
+## Modelo 3: 
 Se desea programar un juego de rol dentro del cual, cada personaje contendrá va a tener los siguientes elementos:
 Vida:  Número entero que se setea a la hora de instanciar al personaje.
 Fuerza:  Cantidad de puntos que resta a la vida del enemigo al atacarlo.
