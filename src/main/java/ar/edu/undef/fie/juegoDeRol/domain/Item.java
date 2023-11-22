@@ -29,6 +29,4 @@ public abstract class Item {
     public void desequipar() {
         this.equipado = false;
     }
-
-    public abstract void aplicarEfecto(Personaje personaje);
 }

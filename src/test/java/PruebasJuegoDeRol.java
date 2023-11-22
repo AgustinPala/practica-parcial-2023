@@ -1,4 +1,5 @@
 import ar.edu.undef.fie.juegoDeRol.domain.Arma;
+import ar.edu.undef.fie.juegoDeRol.domain.ItemDeDefensa;
 import ar.edu.undef.fie.juegoDeRol.domain.Personaje;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +40,12 @@ public class PruebasJuegoDeRol {
         personaje.equipar(arma1);
 
         System.out.println(oponente.getVida());
+        ItemDeDefensa escudo = new ItemDeDefensa("Escudo", 10);
+        oponente.equipar(escudo);
+        System.out.println(oponente.getVida());
+
         personaje.atacar(oponente);
+
         System.out.println(oponente.getVida());
     }
 }

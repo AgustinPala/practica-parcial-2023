@@ -9,8 +9,7 @@ public class ItemDeDefensa extends Item {
         this.aumentoDeVida = aumentoDeVida;
     }
 
-    @Override
-    public void aplicarEfecto(Personaje personaje) {
-        personaje.setVida(personaje.getVida() + aumentoDeVida);
+    public int obtenerAumentoVida() {
+        return aumentoDeVida;
     }
 }

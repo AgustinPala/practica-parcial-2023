@@ -1,8 +1,6 @@
 package ar.edu.undef.fie.juegoDeRol.domain;
 
 import ar.edu.undef.fie.juegoDeRol.utils.ListaLimitada;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Personaje {
@@ -20,7 +18,13 @@ public class Personaje {
     // Getters y Setters
 
     public int getVida() {
-        return vida;
+        int defensa = this.vida;
+        for (Item item : inventario) {
+            if (item instanceof ItemDeDefensa) {
+                defensa += ((ItemDeDefensa) item).obtenerAumentoVida();
+            }
+        }
+        return defensa;
     }
 
     public void setVida(int vida) {
@@ -72,16 +76,16 @@ public class Personaje {
             return;
         }
 
+        // Obtengo el dano total de mi personaje
         int dano = this.fuerza;
-
         for (Item item : inventario) {
             if (item instanceof Arma) {
                 dano += ((Arma) item).getDano();
             }
         }
 
-        // Realizamos el ataque
-        oponente.setVida(oponente.getVida() - dano);
+        // Atacamos
+        oponente.setVida(oponente.getVida() - dano);    // Cuando hago el getVida() obtengo ya la vida sumada con los objetos defensivos
         if (oponente.vida < 0) {
             System.out.println("El oponente ha muerto!");
         }

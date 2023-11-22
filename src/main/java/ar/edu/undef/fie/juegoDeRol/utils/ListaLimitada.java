@@ -1,7 +1,6 @@
 package ar.edu.undef.fie.juegoDeRol.utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListaLimitada<E> extends ArrayList<E> {
     private final int maxSize;
