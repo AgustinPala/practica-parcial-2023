@@ -11,8 +11,8 @@ public class ListaLimitada<E> extends ArrayList<E> {
     }
 
     @Override
-    public boolean add(E e) {
-        boolean added = super.add(e);
+    public boolean add(E elemento) {           //Sobreescribo el metodo add
+        boolean added = super.add(elemento);
         while (size() > maxSize) {
             remove(0); // Remove elements from the beginning if size exceeds maxSize
         }
