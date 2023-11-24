@@ -53,7 +53,6 @@ public class Personaje {
                 return;
             }
         }
-
         item.equipar();
         inventario.add(item);
         System.out.println("Item equipado");

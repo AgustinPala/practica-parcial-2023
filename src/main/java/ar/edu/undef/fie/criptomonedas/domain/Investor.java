@@ -36,23 +36,20 @@ public class Investor implements CriptoCurrencyObserver {
         for (var movement : movements) {
             sumOfPercentages += movement.getPercentage();
         }
-
         invest(sumOfPercentages >= 0, currency);
-
-
     }
 
     public void buyCripto(double cash, CriptoCurrency criptoCurrency) {
         if (this.cash < cash) {
-            throw new IllegalArgumentException("You don't have enough cash to buy this amount");
+            throw new IllegalArgumentException("You don't have enough cash to buy this amount");    // Puedo comprarlas?
         } else {
-            int amountOfCriptosToBuy = (int) (cash / criptoCurrency.getPrice());
+            int amountOfCriptosToBuy = (int) (cash / criptoCurrency.getPrice());    // obtengo la cantidad de criptos que quiero comprar
             this.cash -= cash;
 
             if (this.criptoCurrencies.containsKey(criptoCurrency.getName())) {
-                this.criptoCurrencies.put(criptoCurrency.getName(), this.criptoCurrencies.get(criptoCurrency.getName()) + amountOfCriptosToBuy);
+                this.criptoCurrencies.put(criptoCurrency.getName(), this.criptoCurrencies.get(criptoCurrency.getName()) + amountOfCriptosToBuy);    //Me fijo en el diccionario si tengo esas criptos
             } else {
-                this.criptoCurrencies.put(criptoCurrency.getName(), amountOfCriptosToBuy);
+                this.criptoCurrencies.put(criptoCurrency.getName(), amountOfCriptosToBuy);  // Si no las tengo las agrego
             }
         }
     }
@@ -85,7 +82,5 @@ public class Investor implements CriptoCurrencyObserver {
     public void changeStrategy(StrategyInvest strategyInvest){
         this.strategyInvest = strategyInvest;
     }
-
-
 
 }

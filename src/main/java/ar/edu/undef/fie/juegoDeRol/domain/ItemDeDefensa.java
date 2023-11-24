@@ -2,7 +2,7 @@ package ar.edu.undef.fie.juegoDeRol.domain;
 
 public class ItemDeDefensa extends Item {
 
-    private int aumentoDeVida;
+    private final int aumentoDeVida;
 
     public ItemDeDefensa(String nombre, int aumentoDeVida) {
         super(nombre);

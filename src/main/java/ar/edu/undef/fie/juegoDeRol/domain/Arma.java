@@ -4,8 +4,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Arma extends Item {
 
-    private int danoMinimo;
-    private int danoMaximo;
+    private final int danoMinimo;
+    private final int danoMaximo;
 
     public Arma(String nombre, int danoMinimo, int danoMaximo) {
         super(nombre);
